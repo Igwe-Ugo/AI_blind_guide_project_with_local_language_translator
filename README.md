@@ -5,7 +5,7 @@ To address the standalone functionality limitation, the project outlines steps t
 The limitations, possible solutions and procedures taken to achieve this project are all listed in the limtations and solutions.txt as seen in this repository, you will do well to check it out.
 CREDITS
 # Supervisors
-Dr. Azubike Aniedu - Project supervisor - 
+Dr. Azubike Aniedu - Project supervisor - https://github.com/anoca505
 Engr. Chikwado Emmanuel - Project supervisor 2 - https://github.com/quado2
 Engr. Sandra - Project supervisor 3
 # Project Colleagues
