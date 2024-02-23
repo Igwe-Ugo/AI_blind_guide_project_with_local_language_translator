@@ -36,8 +36,29 @@ PROCEDURES TO RUN THE PYTHON CODE:
 The step below would help one to know how to run the python code on a brand new raspberry pi.
 Step 1: Now python is by default installed on a raspberry pi, but for the raspberry pi 5 which was used in this project, the python 3 is installed by default, so there should be no need to go through the rigours of installing again. But to be sure that python is installed on your raspberry pi, run the command: "which python" on the terminal. It tells you the version of the python already installed in the system.
 Step 2: Install the necessary python libraries on raspberry pi. Libraries like "python-opencv"and "pillow" with the command: "pip3 install python-opencv pillow".
-Step 3: Use mpg321 invoke it from the command line by executing the command: "sudo apt-get install mpg321". This install the mpg321 package that helps to play the audio files in the background.
-Step 4: Open the thorny IDE and make sure the selected interpreter is the interpreter that has the installed python library.
-Step 5: Write the code attached to this file in the IDE.
-Step 6: Make sure the files as named: "coco.names", "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt", "frozen_inference_graph.pb" and "object_sound.json" are in the same directory as the python file you just created.
-Step 7: Run the code and this should run successfully if there be no errors.
+Step 3: Alternatively, installing pillows might be very tricky with the raspberry pi. So, follow the below instructions:
+	To install PIL (Python Imaging Library) on a Raspberry Pi, you can use pip, the package installer for Python. Here are the steps:
+
+	1. Open a terminal window on your Raspberry Pi.
+	2. Update the package lists for upgrades and new package installations by running:
+   		```
+   		sudo apt-get update
+  		 ```
+	3. Install the required libraries and dependencies for PIL by running:
+  		 ```
+   		sudo apt-get install libopenjp2-7 libtiff5
+  		 ```
+	4. Install PIL using pip:
+   		```
+  		pip install pillow
+   		```
+	5.  Once installed, you can import PIL in your Python scripts using:
+		```python
+		from PIL import Image, ImageTk
+		```
+	Now, you can use PIL for image processing and manipulation in your Python applications on the Raspberry Pi.
+Step 4: Use mpg321 invoke it from the command line by executing the command: "sudo apt-get install mpg321". This install the mpg321 package that helps to play the audio files in the background.
+Step 5: Open the thorny IDE and make sure the selected interpreter is the interpreter that has the installed python library.
+Step 6: Write the code attached to this file in the IDE.
+Step 7: Make sure the files as named: "coco.names", "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt", "frozen_inference_graph.pb" and "object_sound.json" are in the same directory as the python file you just created.
+Step 8: Run the code and this should run successfully if there be no errors.
