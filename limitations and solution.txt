@@ -1,0 +1,43 @@
+LIMITATIONS TO THIS PROJECT AND THE POSSIBLE SOLUTIONS:
+1. The python script that executes the code is not yet made standalone or bootable. That is the systems is not able to run alone when the raspberry pi boots up.
+2. The sound funtion call denoted under the function: "findSound()" runs repeatably which might constitute noise to the ear.
+3. The sound is played minutes before the video frame is updated with the current/actual frame it is detecting.
+
+SOLUTIONS
+A. For the first limitation, there are some possible solutions to it:
+1. Creating a mobile application that fetches the image frame, processes it and then gives an audio output.
+2. Try to research ways on how to make a python script run onboot for raspberry pi. A possible way to achieve this is by making use of the step below:
+	Step 1: Navigate to the home directory of the raspberry pi.
+	Step 2: Right click on the home directory and check the "Show hidden files" option.
+	Step 3: Navigate into the ".config" directory and create a folder and name it "autostart".
+	Step 4: Navigate into the just created "autostart" folder and create a file with the ".desktop" file extension example: "autostart.desktop". This makes the file to run onboot on the desktop directory.
+	Step 5: Open the just created "autostart.desktop" file and type in the code as written below:
+		[Desktop Entry]
+		
+		Exec=python .../path/to/python/script
+	Step 6: Save your workspace and close the file.
+	Step 7: Close all windows and reboot your raspberry pi.
+The above step has a possibility to call up the python script automatically onboot of the raspberry pi.
+
+B. For the second limitation, the solution can be that a reasonable amount of delay should be passed into the system that makes the audio sound to be called up moderately, such that it doesn't either lag or runs speedily, but be able to get adaptable in real time.
+
+C. This might not actually be an issue because the system is made for a blind person who will not be needing a video signal to navigate, but just the audio feedback. But if this is still a problem, the possible solution can be to reduce the timeframe the video capture is updated in the GUI. Currently it takes 10milliseconds to do this, which is the last line of code under the "updateFrame()" function.
+
+PROCEDURES TO RUN THE C++ CODE:
+Step 1: Download the Arduino IDE by visitng their website: www.arduino.cc/download, then download the latest version of the arduino IDE and install it into your system.
+Step 2: Install the necessary driver for the esp32-cam module by visiting the link: "www.github.com/yoursunny/esp32cam", download the zip file and paste the zip file in your chosen directly.
+Step 3: Click the "Sketch" tab on the Arduino IDE window. In the drop down menu, click the "Include Library", another "Add Library" dropdown menu is seen, which the "Add .zip Library..." option is clicked.It will usher you to a new window to select the required zip file to be added. Navigate to the directory where the zip file was downloaded, select it and hitting the "Open" button, it includes the library into the Standard library selected. Thus making the esp32cam driver ready to be used.
+Step 4: Write the Arduino code as attached to this file in the IDE. But make sure to pass in the correct network name and password of your hotspot network in the code.
+Step 5: Plug in your esp32cam module to your system, make sure to select the actual COM port on the IDE by clicking the "Tools" tab on the tab bar and selecting the actual port and the board. The name of the board should be: "ESP32 Wrover Module".
+Step 6: When this is ready, hit the upload button at the top-left panel of the IDE, while the USB port is still connected, in order to burn the code to the esp32cam board.
+Step 7: This should set up the esp32cam to behind to get the image frames. These image frames will be gotten from the IP Address provided by the system.
+
+PROCEDURES TO RUN THE PYTHON CODE:
+The step below would help one to know how to run the python code on a brand new raspberry pi.
+Step 1: Now python is by default installed on a raspberry pi, but for the raspberry pi 5 which was used in this project, the python 3 is installed by default, so there should be no need to go through the rigours of installing again. But to be sure that python is installed on your raspberry pi, run the command: "which python" on the terminal. It tells you the version of the python already installed in the system.
+Step 2: Install the necessary python libraries on raspberry pi. Libraries like "python-opencv"and "pillow" with the command: "pip3 install python-opencv pillow".
+Step 3: Use mpg321 invoke it from the command line by executing the command: "sudo apt-get install mpg321". This install the mpg321 package that helps to play the audio files in the background.
+Step 4: Open the thorny IDE and make sure the selected interpreter is the interpreter that has the installed python library.
+Step 5: Write the code attached to this file in the IDE.
+Step 6: Make sure the files as named: "coco.names", "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt", "frozen_inference_graph.pb" and "object_sound.json" are in the same directory as the python file you just created.
+Step 7: Run the code and this should run successfully if there be no errors.
