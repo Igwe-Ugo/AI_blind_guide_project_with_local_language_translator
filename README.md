@@ -9,7 +9,7 @@ The limitations, possible solutions and procedures taken to achieve this project
 # Supervisors
 Dr. Azubike Aniedu - Project supervisor - https://github.com/anoca505
 Engr. Chikwado Emmanuel - Project supervisor 2 - https://github.com/quado2
-Engr. Sandra - Project supervisor 3
+Engr. Sandra Nwokoye - Project supervisor 3 - https://github.com/sandrabest
 # Project Colleagues
 Nwokeabia David - https://github.com/daavhidd
 Ojiakor Michael - https://github.com/DevEdozie
@@ -17,3 +17,5 @@ Igwe Ugochukwu - https://github.com/Igwe-Ugo
 Okeke Chukwuma - https://github.com/softboy-chu
 Chukwuma Ugochukwu
 Okoye Christian
+Victor Okafor
+Ayobami
